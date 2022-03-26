@@ -9,7 +9,7 @@
 %\usepackage{pscyr}
 %\renewcommand{\rmdefault}{ftm}
 %%% Дополнительная работа с математикой
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,gensymb} % AMS
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,gensymb,float} % AMS
 %% Номера формул
 %\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
 %\usepackage{leqno} % Нумерация формул слева
@@ -75,7 +75,7 @@
 }
 
 \usepackage{bm}
-
+\usepackage{tikz}
 \begin{document}
 % НАЧАЛО ТИТУЛЬНОГО ЛИСТА
 \begin{center}
@@ -97,7 +97,7 @@
     \hfill \break
     \hfill \break
     \large{\textbf{Домашняя работа}\\
-        \hfill \break Математические модели инерциальный навигации
+        \hfill \break Математические модели инерциальной навигации
     }
 \end{center}
 
@@ -221,6 +221,64 @@ $O\eta$ и $Mx$ связаны через следующие повороты
 \end{eqnarray*}
 \newpage
 \section{Задача 2}
+\textbf{Задание:}
+
+Вычислить с точностью до $e^4$ взаимосвязь географической и геоцентрической широты при $h\neq0$
+
+\textbf{Решение:}
+
+\begin{figure}[htb]
+    \center{\includegraphics[scale=0.7]{images/Re_5.png}}
+\end{figure}
+При не нулевой высоте ($h = |NM| \ne 0$)
+\begin{eqnarray*}
+    \left\{
+    \begin{array}{ccc}
+        \eta_1   & = & R_E\cos \varphi ,                      \\
+        \eta_{3} & = & R_{E}\left(1 -e^2\right) \sin \varphi,
+    \end{array}
+    \right.
+    \Rightarrow
+    \left\{
+    \begin{array}{ccc}
+        \eta_1   & = & (R_E + h) \cos \varphi,                                \\
+        \eta_{3} & = & \left(R_{E}\left(1 -e^2\right) + h\right)\sin \varphi.
+    \end{array}
+    \right.
+\end{eqnarray*}
+Если ограничиться окрестностью поверхности эллипсоида такой, что
+$h/a \le e^2 $,  $h < 43 \mbox{км}$, $e^2 \simeq 6.69\cdot 10^{-3} \ll 1$,
+то с точностью до соответствующих степеней $e$, получим
+\begin{itemize}
+    \item
+          для радусов кривизны $R_E$
+          \begin{eqnarray*}
+              R_E &\approx&
+              a\left( 1 +  \frac{e^2}{2}\sin^2\varphi +\frac{3}{8}e^4\sin^4\varphi +\frac{15}{48}e^6\sin^6\varphi\right), \nonumber \\
+          \end{eqnarray*}
+
+    \item
+          для модуля радиус-вектора $r = |OM|$
+          \begin{eqnarray*}
+              r = a + h -\frac{ae^2}{2}\sin^2\varphi + \frac{ a e^4}{2} \sin^2 \varphi\left( \cos^2 \varphi - \frac{1}{4} \sin^2 \varphi \right)  + O(0.1 \mbox{м}).
+          \end{eqnarray*}
+
+\end{itemize}
+\begin{figure}[H]
+    \center{\includegraphics[width=0.7\textwidth]{images/IMG_0604.jpeg}}
+    \caption{Связь географической и геоцентрической широты}
+    \label{fig:picture}
+\end{figure}
+\begin{align*}
+    \frac{\sin(\varphi-\varphi^0)}{OE}=
+    \frac{\cos\varphi}{OM} \\
+    OE=NK-\eta_3 \\
+    NK=\sqrt{R_E^2-\eta_1}=\sqrt{R_E^2-R_E^2\cos^2\varphi}=R_E\sin\varphi \\
+    OE=R_E\sin\varphi-R_E(1-e^2)\sin\varphi=e^2R_E\sin\varphi \\
+    \sin(\varphi-\varphi_0)=\frac{e^2R_E\sin\varphi\cos\varphi}{r}
+\end{align*}
+
+
 \section{Задача 3}
 \section{Задача 4}
 \textbf{Задание:}
