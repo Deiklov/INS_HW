@@ -229,6 +229,8 @@ $O\eta$ и $Mx$ связаны через следующие повороты
 
 \begin{figure}[htb]
     \center{\includegraphics[scale=0.7]{images/Re_5.png}}
+    \caption{Сечение эллипсоида плоскостью $O\eta_1\eta_3$ нулевого меридиана}
+    \label{fig:picture}
 \end{figure}
 При не нулевой высоте ($h = |NM| \ne 0$)
 \begin{eqnarray*}
@@ -271,12 +273,21 @@ $h/a \le e^2 $,  $h < 43 \mbox{км}$, $e^2 \simeq 6.69\cdot 10^{-3} \ll 1$,
 \end{figure}
 \begin{align*}
     \frac{\sin(\varphi-\varphi^0)}{OE}=
-    \frac{\cos\varphi}{OM} \\
-    OE=NK-\eta_3 \\
+    \frac{\cos\varphi}{OM}                                                \\
+    OE=NK-\eta_3                                                          \\
     NK=\sqrt{R_E^2-\eta_1}=\sqrt{R_E^2-R_E^2\cos^2\varphi}=R_E\sin\varphi \\
-    OE=R_E\sin\varphi-R_E(1-e^2)\sin\varphi=e^2R_E\sin\varphi \\
-    \sin(\varphi-\varphi_0)=\frac{e^2R_E\sin\varphi\cos\varphi}{r}
+    OE=R_E\sin\varphi-R_E(1-e^2)\sin\varphi=e^2R_E\sin\varphi             \\
+    \sin(\varphi-\varphi_0)=\frac{e^2R_E\sin\varphi\cos\varphi}{r}=\frac{e^2\sin2\varphi R_E}{2r}
 \end{align*}
+\begin{align*}
+    \frac{R_E}{r}\approx\frac{a(1+\frac{e^2}{2}\sin^2\varphi)}{a(1+\frac{h}{a}-\frac{e^2\sin^2\varphi}{2})}=
+    \frac{1}{1-(\frac{e^2\sin^2\varphi}{2}-\frac{h}{a})}+\frac{\frac{e^2\sin^2\varphi}{2}}{1-(\frac{e^2\sin^2\varphi}{2}-\frac{h}{a})}\approx \\
+    \approx1+(\frac{e^2\sin^2\varphi}{2}-\frac{h}{a})+(\frac{e^2\sin^2\varphi}{2}-\frac{h}{a})^2=                                             \\
+    1+\frac{e^2\sin^2\varphi}{2}-\frac{h}{a}+\frac{e^4\sin^4\varphi}{4}+(\frac{h}{a})^2-\frac{h}{a}e^2\sin^2\varphi
+\end{align*}
+Тогда для $\sin(\varphi-\varphi_0)\approx\varphi-\varphi_0$ получим:\\*
+$\varphi=\varphi_0+\frac{e^2R_E\sin2\varphi}{2}(1+\frac{e^2\sin^2\varphi}{2}-\frac{h}{a}+\frac{e^4\sin^4\varphi}{4}+(\frac{h}{a})^2-\frac{h}{a}e^2\sin^2\varphi)$ \\*
+Ответ: $\varphi=\varphi_0+\frac{e^2R_E\sin2\varphi}{2}(1+\frac{e^2\sin^2\varphi}{2}-\frac{h}{a}+\frac{e^4\sin^4\varphi}{4}+(\frac{h}{a})^2-\frac{h}{a}e^2\sin^2\varphi)$
 
 
 \section{Задача 3}
