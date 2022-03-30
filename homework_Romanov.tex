@@ -97,7 +97,7 @@
     \hfill \break
     \hfill \break
     \large{\textbf{Домашняя работа}\\
-        \hfill \break Математические модели инерциальной навигации
+        \hfill \break Инерциальные навигационные системы
     }
 \end{center}
 
@@ -291,6 +291,51 @@ $\varphi=\varphi_0+\frac{e^2R_E\sin2\varphi}{2}(1+\frac{e^2\sin^2\varphi}{2}-\fr
 
 
 \section{Задача 3}
+\textbf{Задание:}
+
+Проверить <<морские>> формулы для выражений для угловых скоростей географического трехгранника
+
+\textbf{Решение:}
+
+Вектор угловых скоростей в общем виде:
+\begin{eqnarray*}
+    \Omega_{1} &=& - V_{2}\left(\frac{\sin^{2}\chi}{R_{E}+h} +
+    \frac{\cos^{2}\chi}{R_{N}+h}\right) - V_{1} \sin \chi \cos \chi
+    \left(\frac{1}{R_{N}+h} -
+    \frac{1}{R_{E}+h}\right) , \nonumber \\
+    \Omega_{2} &=& \phantom{-} V_{1}\left(\frac{\sin^{2}\chi}{R_{N}+h} +
+    \frac{\cos^{2}\chi}{R_{E}+h}\right ) + V_{2} \sin \chi \cos \chi
+    \left(\frac{1}{R_{N}+h} - \frac{1}{R_{E}+h}\right).
+\end{eqnarray*}
+подставим $h=0$
+\begin{eqnarray*}
+    \Omega_{1} &=& - V_{2}\left(\frac{\sin^{2}\chi}{R_{E}} +
+    \frac{\cos^{2}\chi}{R_{N}}\right) - V_{1} \sin \chi \cos \chi
+    \left(\frac{1}{R_{N}} -
+    \frac{1}{R_{E}}\right) , \nonumber \\
+    \Omega_{2} &=& \phantom{-} V_{1}\left(\frac{\sin^{2}\chi}{R_{N}} +
+    \frac{\cos^{2}\chi}{R_{E}}\right ) + V_{2} \sin \chi \cos \chi
+    \left(\frac{1}{R_{N}} - \frac{1}{R_{E}}\right).
+\end{eqnarray*}
+Выражения для <<морских>> формул
+\begin{eqnarray*}
+    \Omega_1  &=& - \frac{V_2}{R_E} + \frac{V_N}{R_E} \left( 1 - \frac{R_E}{R_N}\right) \cos \chi, \nonumber \\
+    \Omega_2  &=& \phantom{-} \frac{V_1}{R_E} - \frac{V_N}{R_E} \left( 1
+    - \frac{R_E}{R_N}\right) \sin \chi. \nonumber \\
+\end{eqnarray*}
+Подставим $V_N=V_1 \sin \chi + V_2 \cos \chi$ в <<морские>> формулы, получим
+
+\begin{eqnarray*}
+    \Omega_1 = - \frac{V_2}{R_E} + \frac{V_1 \sin \chi + V_2 \cos \chi}{R_E} \left( 1 - \frac{R_E}{R_N}\right) \cos \chi=\\
+    = -V_2\left(\frac{1}{R_E}-\frac{\cos^2\chi}{R_E}+\frac{\cos^2\chi}{R_N}\right)-V_1\left( \frac{\sin\chi\cos\chi}{R_N}-\frac{\sin\chi\cos\chi}{R_E} \right) =\\
+    = -V_2\left(\frac{\sin^2\chi}{R_E}+\frac{\cos^2\chi}{R_N}\right)-V_1\sin\chi\cos\chi\left( \frac{1}{R_N}-\frac{1}{R_E} \right)\\
+\end{eqnarray*}
+\begin{eqnarray*}
+    \Omega_2 = \phantom{-} \frac{V_1}{R_E} - \frac{V_1 \sin \chi + V_2 \cos \chi}{R_E} \left( 1- \frac{R_E}{R_N}\right) \sin \chi=\\
+    =V_1\left(\frac{1}{R_E}-\frac{\sin^2\chi}{R_E}+\frac{\sin^2\chi}{R_N}\right)+V_2\left( \frac{\sin\chi\cos\chi}{R_N}-\frac{\sin\chi\cos\chi}{R_E} \right) =\\
+    =V_{1}\left(\frac{\sin^{2}\chi}{R_{N}} +\frac{\cos^{2}\chi}{R_{E}}\right ) + V_{2} \sin \chi \cos \chi\left(\frac{1}{R_{N}} - \frac{1}{R_{E}}\right).\\
+\end{eqnarray*}
+В результате подстановки получили исходные формулы
 \section{Задача 4}
 \textbf{Задание:}
 
