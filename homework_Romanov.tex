@@ -128,483 +128,145 @@
 \section{Задача 1}
 \textbf{Задание:}
 
-Вычислить кватернион ориентации (прямой и обратный) географического трехгранника $Mx$ относительно трехгранника $O\eta$
+Введем «замороженный» относительно инерциального пространства трехгранник $M_0x_0^0$,
+совпадающий с географическим трехгранником $M_0x^0$ БИНС в начальный момент времени $t_0$.
+Выведите динамические уравнения движения в абсолютных пере
 
 \textbf{Решение:}
 
-$O\eta$ и $Mx$ связаны через следующие повороты
-
-
-\begin{eqnarray*}
-    O\eta \quad
-    \xrightarrow[3]{\frac{\pi}{2} +\lambda}\
-    \xrightarrow[1]{\frac{\pi}{2} -\varphi}\
-    Mx^0
-    \xrightarrow[3]{\chi}\
-    Mx
-\end{eqnarray*}
-Кватернион ориентации географического трехгранника $Mx^0$ относительно гринвического трехгранника $O\eta$:
-
-\begin{eqnarray*}
-    P^{x^0\eta} &=&
-    \left(
-    \begin{array}{c}
-            \cos\frac{\frac{\pi}{2}+\lambda}{2}\cos \frac{\frac{\pi}{2}-\varphi}{2}\cr
-            \cos\frac{\frac{\pi}{2}+\lambda}{2}\sin\frac{\frac{\pi}{2}-\varphi}{2}\cr
-            \sin\frac{\frac{\pi}{2}+\lambda}{2}\sin \frac{\frac{\pi}{2}-\varphi}{2}\cr
-            \sin\frac{\frac{\pi}{2}+\lambda}{2}\cos \frac{\frac{\pi}{2}-\varphi}{2}
-        \end{array}
-    \right)=
-    \frac{1}{2}
-    \left(
-    \begin{array}{c}
-            \cos\frac{\lambda+\varphi}{2}- \sin\frac{\lambda-\varphi}{2}\cr
-            \cos\frac{\lambda-\varphi}{2}- \sin\frac{\lambda+\varphi}{2}\cr
-            \cos\frac{\lambda+\varphi}{2}+ \sin\frac{\lambda-\varphi}{2}\cr
-            \cos\frac{\lambda-\varphi}{2}+ \sin\frac{\lambda+\varphi}{2}
-        \end{array}
-    \right).
-\end{eqnarray*}
-Кватернион ориентации приборного трехгранника $Mx$ относительно географического трехгранника $Mx^0$:
-
-\begin{eqnarray*}
-    P^{xx^0}= \left( \begin{array}{c}
-            \cos\frac{\chi}{2} \cr
-            0 \cr
-            0 \cr
-            \sin\frac{\chi}{2}
-        \end{array} \right)
-\end{eqnarray*}
-Кватернион ориентации географического трехгранника с произвольной
-ориентацией в азимуте $Mx$ относительно гринвического трехгранника $O\eta$:
-{\small\begin{eqnarray*}
-    P^{x\eta}=P^{xx^0} \odot P^{x^0\eta}=
-    \left(
-    \begin{array}{c}
-            \cos\frac{\frac{\pi}{2}+\lambda + \chi}{2}\cos \frac{\frac{\pi}{2}-\varphi}{2}\cr
-            \cos\frac{\frac{\pi}{2}+\lambda - \chi}{2}\sin\frac{\frac{\pi}{2}-\varphi}{2}\cr
-            \sin\frac{\frac{\pi}{2}+\lambda - \chi}{2}\sin \frac{\frac{\pi}{2}-\varphi}{2}\cr
-            \sin\frac{\frac{\pi}{2}+\lambda + \chi}{2}\cos \frac{\frac{\pi}{2}-\varphi}{2}
-        \end{array}
-    \right)
-    =
-    \frac{1}{2}
-    \left(
-    \begin{array}{c}
-            \cos\frac{\lambda+\chi+\varphi}{2}- \sin\frac{\lambda+\chi-\varphi}{2}\cr
-            \cos\frac{\lambda-\chi-\varphi}{2}- \sin\frac{\lambda-\chi+\varphi}{2}\cr
-            \cos\frac{\lambda-\chi+\varphi}{2}+ \sin\frac{\lambda-\chi-\varphi}{2}\cr
-            \cos\frac{\lambda+\chi-\varphi}{2}+ \sin\frac{\lambda+\chi+\varphi}{2}
-        \end{array}
-    \right)=
-    \left(
-    \begin{array}{c}
-            q_0\cr
-            q_1\cr
-            q_2\cr
-            q_3
-        \end{array}
-    \right)
-\end{eqnarray*}
-}
-Обратный кватернион ориентации $P^{\eta x}$:
-\begin{eqnarray*}
-    P^{\eta x} =\frac{1}{2}
-    \left(
-    \begin{array}{c}
-            \cos\frac{\lambda+\chi+\varphi}{2}- \sin\frac{\lambda+\chi-\varphi}{2}\cr
-            -\cos\frac{\lambda-\chi-\varphi}{2}+ \sin\frac{\lambda-\chi+\varphi}{2}\cr
-            -\cos\frac{\lambda-\chi+\varphi}{2}- \sin\frac{\lambda-\chi-\varphi}{2}\cr
-            -\cos\frac{\lambda+\chi-\varphi}{2}- \sin\frac{\lambda+\chi+\varphi}{2}
-        \end{array}
-    \right).
-\end{eqnarray*}
 \newpage
 \section{Задача 2}
 \textbf{Задание:}
 
-Вычислить с точностью до $e^4$ взаимосвязь географической и геоцентрической широты при $h\neq0$
+Пусть баровысотомер доставляет точную информацию о текущей высоте. Выведите
+уравнения ошибок демпфируемого вертикального канала. Подберите подходящие
+коэффициенты демпфирования.
 
 \textbf{Решение:}
 
-\begin{figure}[htb]
-    \center{\includegraphics[scale=0.7]{images/Re_5.png}}
-    \caption{Сечение эллипсоида плоскостью $O\eta_1\eta_3$ нулевого меридиана}
-    \label{fig:picture}
-\end{figure}
-При не нулевой высоте ($h = |NM| \ne 0$)
+Модельные уравнения демпфируемого вертикального канала
 \begin{eqnarray*}
-    \left\{
+    {\dot  h}'  &=& V_3' - \underline{K_{v_1}\left(h' - h^b\right)}, \nonumber \\
+    {\dot V_3}'  &=& (\Omega_2' +  2 u_2') V_1' - (\Omega_1' +
+    2u_1') V_2'- g' + f_3' - \underline{K_{v_2}\left(h' - h^b\right) - \Delta {\widetilde f}_3^0} ,\nonumber \\
+    \Delta {\dot {\widetilde{f}_3^0 }}  & = & \underline{K_{v_3}\left(h' - h^b\right)}.
+\end{eqnarray*}
+
+Пусть доступно измерение баровысотомера
+\begin{eqnarray*}
+    h^b = h + \Delta h^b ,
+\end{eqnarray*}
+так как по условию задачи баровысотомер доставляет точные показания, то $h^b=h$
+
+$f_3'$  -- показания "вертикального"\ акселерометра;
+
+$\Delta {\widetilde f}_3^0$ -- оценка нуля "вертикального"\ акселерометра;
+
+$K_{v_1}$, $K_{v_2}$, $K_{v_3}$  --  постоянные коэффициенты алгоритма
+демпфирования.
+\begin{eqnarray*}
+    f_3' =  f_3 + \Delta f_3^0 + \Delta f_3^s,
+\end{eqnarray*}
+}
+где $f_3$ -- истинное значение,
+$\Delta f_3^0$ -- постоянное смещение нуля ($(\Delta {\dot f}_3^0 = 0$)  "вертикального" \ акселерометра,
+$\Delta f_3^s$ --  шумовая составляющая погрешности измерения.
+Идеальные уравнения вертикального канала
+\begin{eqnarray*}
+    {\dot  h}  &=& V_3, \nonumber \\
+    {\dot V_3}  &=& (\Omega_2 +  2 u_2) V_1 - (\Omega_1 +
+    2u_1) V_2- g + f_3.
+\end{eqnarray*}
+Введем
+
+\begin{eqnarray*}
+    \Delta h  = h' - h, \qquad \Delta V_3 = V_3' - V_3, \qquad \delta f_3^0 = \Delta f_3^0 - \Delta {\widetilde f}_3^0,
+\end{eqnarray*}
+
+где $\delta f_3^0$ имеет смысл ошибки оценивания смещения нуля вертикального акселерометра.
+
+Вычитаем из модельных уравнений идеальные уравнения, в линейном приближении получим (не учитываем вариацию поправки Этвеша)
+\begin{eqnarray*}
+    \Delta \dot  h  &=& \Delta V_3 - K_{v_1} \Delta h + K_{v_1} \Delta h^b , \nonumber \\
+    \Delta \dot V_3  &=&  2 \omega_0^2 \Delta h - K_{v_2} \Delta h + K_{v_2} \Delta h^b + \delta f_3^0 + \Delta f_3^s , \nonumber \\
+    \delta {\dot f}_3^0   &=&  K_{v_3} \Delta h - K_{v_3} \Delta h^b
+    .
+\end{eqnarray*}
+
+Уравнения ошибок примут вид:
+\begin{eqnarray*}
+    \underbrace{
+        \left(
+        \begin{array}{c}
+            \Delta \dot h \cr
+            \Delta \dot V_3 \cr
+            \delta {\dot f}_3^0
+        \end{array}
+        \right)}_{\dot x}
+    =
+    \underbrace{
+        \left(
+        \begin{array}{ccc}
+            - K_{v_1}             & 1 & 0  \cr
+            2\omega_0^2 - K_{v_2} & 0 & 1  \cr
+            K_{v_3}               & 0 & 0
+        \end{array}
+        \right)
+    }_{A}
+    \underbrace{
+        \left(
+        \begin{array}{c}
+            \Delta h \cr
+            \Delta V_3 \cr
+            \delta f_3^0
+        \end{array}
+        \right)
+    }_{x}
+    +
+    \underbrace{
+        \left(
+        \begin{array}{c}
+            \phantom{-} K_{v_1} \Delta h^b \cr
+            \phantom{-} K_{v_2} \Delta h^b + \Delta f_3^s \cr
+            -K_{v_3} \Delta h^b
+        \end{array}
+        \right)
+    }_{q}
+    .
+\end{eqnarray*}
+Характеристическое уравнение
+\begin{eqnarray*}
+    \left| \lambda E- A \right| = 0  \Longrightarrow
+    \left|
     \begin{array}{ccc}
-        \eta_1   & = & R_E\cos \varphi ,                      \\
-        \eta_{3} & = & R_{E}\left(1 -e^2\right) \sin \varphi,
+        \lambda  + K_{v_1}     & -1      & 0 \cr
+        -2\omega_0^2 + K_{v_2} & \lambda & -1 \cr
+        - K_{v_3}              & 0       & \lambda
     \end{array}
-    \right.
-    \Rightarrow
-    \left\{
-    \begin{array}{ccc}
-        \eta_1   & = & (R_E + h) \cos \varphi,                                \\
-        \eta_{3} & = & \left(R_{E}\left(1 -e^2\right) + h\right)\sin \varphi.
-    \end{array}
-    \right.
+    \right| = 0 .
 \end{eqnarray*}
-Если ограничиться окрестностью поверхности эллипсоида такой, что
-$h/a \le e^2 $,  $h < 43 \mbox{км}$, $e^2 \simeq 6.69\cdot 10^{-3} \ll 1$,
-то с точностью до соответствующих степеней $e$, получим
-\begin{itemize}
-    \item
-          для радусов кривизны $R_E$
-          \begin{eqnarray*}
-              R_E &\approx&
-              a\left( 1 +  \frac{e^2}{2}\sin^2\varphi +\frac{3}{8}e^4\sin^4\varphi +\frac{15}{48}e^6\sin^6\varphi\right), \nonumber \\
-          \end{eqnarray*}
+Коэффициенты характеристического уравнения зависят от свободных параметров $K_{v_1}$, $K_{v_2}$, $K_{v_3}$.
 
-    \item
-          для модуля радиус-вектора $r = |OM|$
-          \begin{eqnarray*}
-              r = a + h -\frac{ae^2}{2}\sin^2\varphi + \frac{ a e^4}{2} \sin^2 \varphi\left( \cos^2 \varphi - \frac{1}{4} \sin^2 \varphi \right)  + O(0.1 \mbox{м}).
-          \end{eqnarray*}
-
-\end{itemize}
-\begin{figure}[H]
-    \center{\includegraphics[width=0.7\textwidth]{images/IMG_0604.jpeg}}
-    \caption{Связь географической и геоцентрической широты}
-    \label{fig:picture}
-\end{figure}
-\begin{align*}
-    \frac{\sin(\varphi-\varphi^0)}{OE}=
-    \frac{\cos\varphi}{OM}                                                \\
-    OE=NK-\eta_3                                                          \\
-    NK=\sqrt{R_E^2-\eta_1}=\sqrt{R_E^2-R_E^2\cos^2\varphi}=R_E\sin\varphi \\
-    OE=R_E\sin\varphi-R_E(1-e^2)\sin\varphi=e^2R_E\sin\varphi             \\
-    \sin(\varphi-\varphi_0)=\frac{e^2R_E\sin\varphi\cos\varphi}{r}=\frac{e^2\sin2\varphi R_E}{2r}
-\end{align*}
-\begin{align*}
-    \frac{R_E}{r}\approx\frac{a(1+\frac{e^2}{2}\sin^2\varphi)}{a(1+\frac{h}{a}-\frac{e^2\sin^2\varphi}{2})}=
-    \frac{1}{1-(\frac{e^2\sin^2\varphi}{2}-\frac{h}{a})}+\frac{\frac{e^2\sin^2\varphi}{2}}{1-(\frac{e^2\sin^2\varphi}{2}-\frac{h}{a})}\approx \\
-    \approx1+(\frac{e^2\sin^2\varphi}{2}-\frac{h}{a})+(\frac{e^2\sin^2\varphi}{2}-\frac{h}{a})^2=                                             \\
-    1+\frac{e^2\sin^2\varphi}{2}-\frac{h}{a}+\frac{e^4\sin^4\varphi}{4}+(\frac{h}{a})^2-\frac{h}{a}e^2\sin^2\varphi
-\end{align*}
-Тогда для $\sin(\varphi-\varphi_0)\approx\varphi-\varphi_0$ получим:\\*
-$\varphi=\varphi_0+\frac{e^2R_E\sin2\varphi}{2}(1+\frac{e^2\sin^2\varphi}{2}-\frac{h}{a}+\frac{e^4\sin^4\varphi}{4}+(\frac{h}{a})^2-\frac{h}{a}e^2\sin^2\varphi)$ \\*
-Ответ: $\varphi=\varphi_0+\frac{e^2R_E\sin2\varphi}{2}(1+\frac{e^2\sin^2\varphi}{2}-\frac{h}{a}+\frac{e^4\sin^4\varphi}{4}+(\frac{h}{a})^2-\frac{h}{a}e^2\sin^2\varphi)$
-
-
-\section{Задача 3}
-\textbf{Задание:}
-
-Проверить <<морские>> формулы для выражений для угловых скоростей географического трехгранника
-
-\textbf{Решение:}
-
-Вектор угловых скоростей в общем виде:
+Раскроем определитель и получим
+$\lambda^3+K_{v_1}\lambda^2+\lambda(-2\omega_0^2 + K_{v_2})-K_{v_3}=0$
+Подберем коэффициенты обратной связи таким образом, чтобы характеристическое уравнение имело кратные корни
 \begin{eqnarray*}
-    \Omega_{1} &=& - V_{2}\left(\frac{\sin^{2}\chi}{R_{E}+h} +
-    \frac{\cos^{2}\chi}{R_{N}+h}\right) - V_{1} \sin \chi \cos \chi
-    \left(\frac{1}{R_{N}+h} -
-    \frac{1}{R_{E}+h}\right) , \nonumber \\
-    \Omega_{2} &=& \phantom{-} V_{1}\left(\frac{\sin^{2}\chi}{R_{N}+h} +
-    \frac{\cos^{2}\chi}{R_{E}+h}\right ) + V_{2} \sin \chi \cos \chi
-    \left(\frac{1}{R_{N}+h} - \frac{1}{R_{E}+h}\right).
-\end{eqnarray*}
-подставим $h=0$
-\begin{eqnarray*}
-    \Omega_{1} &=& - V_{2}\left(\frac{\sin^{2}\chi}{R_{E}} +
-    \frac{\cos^{2}\chi}{R_{N}}\right) - V_{1} \sin \chi \cos \chi
-    \left(\frac{1}{R_{N}} -
-    \frac{1}{R_{E}}\right) , \nonumber \\
-    \Omega_{2} &=& \phantom{-} V_{1}\left(\frac{\sin^{2}\chi}{R_{N}} +
-    \frac{\cos^{2}\chi}{R_{E}}\right ) + V_{2} \sin \chi \cos \chi
-    \left(\frac{1}{R_{N}} - \frac{1}{R_{E}}\right).
-\end{eqnarray*}
-Выражения для <<морских>> формул
-\begin{eqnarray*}
-    \Omega_1  &=& - \frac{V_2}{R_E} + \frac{V_N}{R_E} \left( 1 - \frac{R_E}{R_N}\right) \cos \chi, \nonumber \\
-    \Omega_2  &=& \phantom{-} \frac{V_1}{R_E} - \frac{V_N}{R_E} \left( 1
-    - \frac{R_E}{R_N}\right) \sin \chi. \nonumber \\
-\end{eqnarray*}
-Подставим $V_N=V_1 \sin \chi + V_2 \cos \chi$ в <<морские>> формулы, получим
-
-\begin{eqnarray*}
-    \Omega_1 = - \frac{V_2}{R_E} + \frac{V_1 \sin \chi + V_2 \cos \chi}{R_E} \left( 1 - \frac{R_E}{R_N}\right) \cos \chi=\\
-    = -V_2\left(\frac{1}{R_E}-\frac{\cos^2\chi}{R_E}+\frac{\cos^2\chi}{R_N}\right)-V_1\left( \frac{\sin\chi\cos\chi}{R_N}-\frac{\sin\chi\cos\chi}{R_E} \right) =\\
-    = -V_2\left(\frac{\sin^2\chi}{R_E}+\frac{\cos^2\chi}{R_N}\right)-V_1\sin\chi\cos\chi\left( \frac{1}{R_N}-\frac{1}{R_E} \right)\\
-\end{eqnarray*}
-\begin{eqnarray*}
-    \Omega_2 = \phantom{-} \frac{V_1}{R_E} - \frac{V_1 \sin \chi + V_2 \cos \chi}{R_E} \left( 1- \frac{R_E}{R_N}\right) \sin \chi=\\
-    =V_1\left(\frac{1}{R_E}-\frac{\sin^2\chi}{R_E}+\frac{\sin^2\chi}{R_N}\right)+V_2\left( \frac{\sin\chi\cos\chi}{R_N}-\frac{\sin\chi\cos\chi}{R_E} \right) =\\
-    =V_{1}\left(\frac{\sin^{2}\chi}{R_{N}} +\frac{\cos^{2}\chi}{R_{E}}\right ) + V_{2} \sin \chi \cos \chi\left(\frac{1}{R_{N}} - \frac{1}{R_{E}}\right).\\
-\end{eqnarray*}
-В результате подстановки получили исходные формулы
-\section{Задача 4}
-\textbf{Задание:}
-
-Ввести географические координаты -- широту, долготу, высоту:
-\[
-    \lambda=123^{\degree}:24^{'}:29.2412^{''}, \varphi=89^{\degree}:28^{'}:29.0441^{''}, h=1252.253000[m].
-\]
-Для этих координат вычислить значение вектора удельной силы
-\textbf{тяжести} двумя способами -- через формулу Гельмерта и модель ГЛОНАСС.
-Сравнить результаты в инерциальных осях $O\xi$
-
-\textbf{Решение:}
-
-Формула Гельмерта, для вычисления абсолютного значения удельной силы тяжести при $h\neq0$:
-
-\[
-    g(\varphi,h)=9.78030(1+0.005302\sin^2\varphi-0.000007\sin^22\varphi)-0.00014-2\omega^2_0h
-\]
-
-\[
-    \omega^2_0=\frac{\mu}{a^3}=1.543\cdot10^{-6}c^{-2} - \text{частота Шулера}
-\]
-Переведем градусы в радианы:
-\[
-    \theta=\theta^{\degree}_1\theta^{'}_2\theta^{''}_3=
-    (\theta_1+\frac{\theta_2}{60}+\frac{\theta_3}{3600})\cdot\frac{\pi}{180}
-\]
-получим
-\[
-    \lambda=2.1538780622991234 \quad
-    \varphi=1.5616287138879488
-\]
-После подстановки численных значений в формулу для $g(\varphi,h)$ получим $g=9.828146316778362$
-\begin{eqnarray*}
-    g_{x^0}=g_{x} =
-    \left(
-    \begin{array}{c}
-            \phantom{-} 0 \cr
-            \phantom{-} 0 \cr
-            -g
-        \end{array}
-    \right)=
-    \left(
-    \begin{array}{c}
-            \phantom{-} 0 \cr
-            \phantom{-} 0 \cr
-            -9.828146316778362
-        \end{array}
-    \right)
-\end{eqnarray*}
-\begin{eqnarray*}
-    g_{\eta}=A_{ \eta x^0}g_{x^0} =
-    \left(
-    \begin{array}{ccc}
-            -\sin \lambda           & -\cos \lambda \sin \varphi & \cos \lambda \cos \varphi  \cr
-            \phantom{-}\cos \lambda & -\sin \lambda \sin \varphi & \sin \lambda \cos \varphi \cr
-            0                       & \cos \varphi               & \sin \varphi
-        \end{array}
-    \right) \left(
-    \begin{array}{c}
-            \phantom{-} 0 \cr
-            \phantom{-} 0 \cr
-            -g
-        \end{array}
-    \right)=\left(
-    \begin{array}{c}
-            -g\cos \lambda \cos \varphi \cr
-            -g\sin \lambda \cos \varphi  \cr
-            -g\sin \varphi
-        \end{array}
-    \right)
-\end{eqnarray*}
-\begin{eqnarray*}
-    g_{\eta}=
-    \left(
-    \begin{array}{c}
-            0.04960863578953103 \cr
-            -0.07521224196332864 \cr
-            -9.827733315771141
-        \end{array}
-    \right)
-\end{eqnarray*}
-\begin{eqnarray*}
-    g_\xi=A_{\xi\eta }g_\eta=
-    \left(
-    \begin{array}{ccc}
-            \phantom{-}\cos (ut+\Lambda_0) & -\sin (ut+\Lambda_0) & 0 \\
-            \sin (ut+\Lambda_0)            & \cos (ut+\Lambda_0)  & 0 \\
-            \phantom{-}0                   & 0                    & 1
-        \end{array}
-    \right).
-\end{eqnarray*}
-При $\Lambda_0=0$, $t=0$ получим
-\begin{eqnarray*}
-    A_{\xi\eta }=
-    \left(
-    \begin{array}{ccc}
-            1 & 0 & 0 \\
-            0 & 1 & 0 \\
-            0 & 0 & 1
-        \end{array}
-    \right)
-\end{eqnarray*}
-\begin{eqnarray*}
-    g_{\xi }=g_{\eta}=
-    \left(
-    \begin{array}{c}
-            0.04960863578953103 \cr
-            -0.07521224196332864 \cr
-            -9.827733315771141
-        \end{array}
-    \right)
-\end{eqnarray*}
-\newpage
-Модель ГЛОНАСС
-
-\begin{eqnarray*}
-    \eta_{1} &=& (R_{E} + h)\cos \varphi \cos \lambda, \nonumber \\
-    \eta_{2} &=& (R_{E} + h)\cos \varphi \sin \lambda, \nonumber  \\
-    \eta_{3} &=& (R_{E} + h)\sin \varphi - R_{E} e^{2} \sin \varphi, \nonumber  \\
-    R_{E} &=& \frac{a}{\sqrt{1 - e^{2}\sin^{2}\varphi}}.
+    \left(\lambda - \lambda_0\right)^3 = 0, \qquad \lambda_0 < 0.
 \end{eqnarray*}
 
-$a=6378136.0$ м
+$\lambda^3-3\lambda^2\lambda_0+3\lambda\lambda_0^2-\lambda_0^3=0$
 
-$e^2=6.69436619\cdot10^{-3}$
+Приравняем коэффиценты при соответствующих степенях
 
+$K_{v_1}=-3\lambda_0; -2\omega_0^2 + K_{v_2}=3\lambda_0^2; K_{v_3}=\lambda_0^3$
 
-$u=7.2921157\cdot10^{-5}c^{-1}$
+$K_{v_1}=-3\lambda_0; K_{v_2}=3\lambda_0^2+2\omega_0^2; K_{v_3}=\lambda_0^3$
 
+Для примера возьмем запас устойчивости $\lambda_0=-1$
 
-\begin{eqnarray*}
-    g^0_{\eta_1} & = & - \frac{\mu}{r^3}\left[1 + \frac{3}{2}C_{20}
-    \frac{a^2}{r^2}\left(5\frac{\eta_3^2}{r^2} - 1 \right) \right]\eta_1,
-    \nonumber \\
-    g^0_{\eta_2} & = & - \frac{\mu}{r^3}\left[1 + \frac{3}{2}C_{20}
-    \frac{a^2}{r^2}\left(5\frac{\eta_3^2}{r^2} - 1 \right) \right]\eta_2,
-    \nonumber \\
-    g^0_{\eta_3} & = & - \frac{\mu}{r^3}\left[1 + \frac{3}{2}C_{20}
-    \frac{a^2}{r^2}\left(5\frac{\eta_3^2}{r^2} - 3 \right) \right]\eta_3,
-    \nonumber \\ r &=& \sqrt{\eta_1^2 + \eta_2^2 + \eta_3^2 }.
-\end{eqnarray*}
+$\omega_0^2 \simeq 1.543\cdot 10^{-6}$ -- квадрат частоты Шулера.
 
+$K_{v_1}=3; K_{v_2}=3+2\omega_0^2=3.000003; K_{v_3}=-1$
 
-$\mu = 398600.44 \cdot 10^{9} \mbox{м}^3/\mbox{cек}^2$ --
-константа гравитационного поля Земли.
-
-$ $
-
-$C_{20} = - 1082.6257 \cdot
-    10^{-6} $ -- коэффициент при второй зональной гармонике -- отражает полярное сжатие Земли.
-
-$ $
-
-$a = 6378136$ м -- большая полуось модельного эллипсоида Земли координатной
-системы
-\begin{eqnarray*}
-    \left(
-    \begin{array}{c}
-        g_{\eta^1}\cr
-        g_{\eta^2}\cr
-        g_{\eta^3}
-    \end{array}
-    \right)=
-    \left(
-    \begin{array}{c}
-        g_{\eta^1}^0+u^2\eta_1\cr
-        g_{\eta^2}^0+u^2\eta_2\cr
-        g_{\eta^3}^0
-    \end{array}
-    \right)
-\end{eqnarray*}
-\begin{eqnarray*}
-    \left(
-    \begin{array}{c}
-            g_{\xi^1}\cr
-            g_{\xi^2}\cr
-            g_{\xi^3}
-        \end{array}
-    \right)=
-    \left(
-    \begin{array}{c}
-            g_{\eta^1}\cr
-            g_{\eta^2}\cr
-            g_{\eta^3}
-        \end{array}
-    \right),\text{при $\Lambda_0=0$, $t=0$}
-\end{eqnarray*}
-Подставим значения в формулы:
-
-$ R_{E}=6399590.765559916$ м
-
-\begin{eqnarray*}
-    \left(
-    \begin{array}{c}
-        \eta_1\cr
-        \eta_2\cr
-        \eta_3
-    \end{array}
-    \right)=
-    \left(
-    \begin{array}{c}
-        -32308.950214915913\cr
-        48983.98318097282 \cr
-        6357734.636847259
-    \end{array}
-    \right)
-\end{eqnarray*}
-\begin{eqnarray*}
-    \left(
-    \begin{array}{c}
-        g_{\eta^1}^0\cr
-        g_{\eta^2}^0\cr
-        g_{\eta^3}^0
-    \end{array}
-    \right)=
-    \left(
-    \begin{array}{c}
-        0.04977943465950662 \cr
-        -0.07547119215881815 \cr
-        -9.82779265362515
-    \end{array}
-    \right)
-\end{eqnarray*}
-\begin{eqnarray*}
-    \left(
-    \begin{array}{c}
-            g_{\eta^1}\cr
-            g_{\eta^2}\cr
-            g_{\eta^3}
-        \end{array}
-    \right)=
-    \left(
-    \begin{array}{c}
-            0.04960763197381786\cr
-            -0.07521072006640274\cr
-            -9.82779265362515
-        \end{array}
-    \right)=
-    \left(
-    \begin{array}{c}
-            g_{\xi^1}\cr
-            g_{\xi^2}\cr
-            g_{\xi^3}
-        \end{array}
-    \right),\text{при $\Lambda_0=0$, $t=0$}
-\end{eqnarray*}
-Различия полученных значений
-\begin{eqnarray*}
-    \left(
-    \begin{array}{c}
-            g_{\xi^1}\cr
-            g_{\xi^2}\cr
-            g_{\xi^3}
-        \end{array}
-    \right)\text{по ф. Гельмерта}-
-    \left(
-    \begin{array}{c}
-            g_{\xi^1}\cr
-            g_{\xi^2}\cr
-            g_{\xi^3}
-        \end{array}
-    \right)\text{по м. ГЛОНАСС}=
-    \left(
-    \begin{array}{c}
-            0.00000100\cr
-            -0.00000152\cr
-            0.00005934
-        \end{array}
-    \right)
-\end{eqnarray*}
+\textbf{Ответ:} $K_{v_1}=3; K_{v_2}=3.000003; K_{v_3}=-1.$
 \end{document}
