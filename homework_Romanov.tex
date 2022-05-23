@@ -170,9 +170,138 @@ $$
     \item оценить значения северного и вертикального дрейфов ДУС.
 
 \end{itemize}
+\newpage
 
 
 \textbf{Решение:}
 
-\newpage
+Графики исходных данных
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\linewidth]{Ax.png}
+    \caption{Показания $Ax(m/s^2)$}
+    \label{fig:ax}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\linewidth]{Ay.png}
+    \caption{Показания $Ay(m/s^2)$}
+    \label{fig:ay}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\linewidth]{Az.png}
+    \caption{Показания $Az(m/s^2)$}
+    \label{fig:az}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\linewidth]{Wx.png}
+    \caption{Показания $Wx(rad/s)$}
+    \label{fig:wx}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\linewidth]{Wy.png}
+    \caption{Показания $Wy(rad/s)$}
+    \label{fig:wy}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\linewidth]{Wz.png}
+    \caption{Показания $Wz(rad/s)$}
+    \label{fig:wz}
+\end{figure}
+
+Из графиков на рисунках \eqref{fig:ax}-\eqref{fig:wz} видно,
+что нет выбросов в данных, поэтому все время наблюдения это интервал неподвижности.
+Первый акселерометр $Ax$ перевернут относительно стандартной ориентации
+Для того, чтобы получить измерения в стандартной ориентации перенумеруем оси
+\begin{equation}\label{aksel}
+    \left\{ {\begin{aligned}
+                 & A_1=-A_2 , \hfill \\
+                 & A_2=A_3, \hfill   \\
+                 & A_3=-A_1. \hfill  \\
+            \end{aligned}} \right.
+\end{equation}
+\begin{equation}\label{dus}
+    \left\{ {\begin{aligned}
+                 & W_1=-W_2, \hfill \\
+                 & W_2=W_3, \hfill  \\
+                 & W_3=-W_1. \hfill \\
+            \end{aligned}} \right.
+\end{equation}
+В географических осях вектор нормальной удельной силы тяжести:
+$$
+    g_{x^{0}}=\left(\begin{array}{r}
+            0 \\
+            0 \\
+            -g
+        \end{array}\right)
+$$
+Матрица перехода от географического трехгранника к приборному
+$$
+    A_{s x^{0}}=\left(\begin{array}{ccc}
+            \cos \psi \cos \gamma+\sin \psi \sin \vartheta \sin \gamma & -\sin \psi \cos \gamma+\cos \psi \sin \vartheta \sin \gamma & -\cos \vartheta \sin \gamma \\
+            \sin \psi \cos \vartheta                                   & \cos \psi \cos \vartheta                                    & \sin \vartheta              \\
+            \cos \psi \sin \gamma-\sin \psi \sin \vartheta \cos \gamma & -\sin \psi \sin \gamma-\cos \psi \sin \vartheta \cos \gamma & \cos \vartheta \cos \gamma
+        \end{array}\right)
+$$
+Сила тяжести в $Ms$ равна
+$$
+    g_{s}=g\left(\begin{array}{c}
+            \cos \vartheta \sin \gamma \\
+            -\sin \vartheta            \\
+            -\cos \vartheta \cos \gamma
+        \end{array}\right)
+$$
+оценку показаний акселерометров найдем как среднее арифметическое всех показаний
+$$
+    \tilde{f}=\frac{\sum_{k=1}^{N} f^{\prime}(k)}{N}=
+    \left(\begin{array}{c}
+            -0.033938193479 \\
+            0.123968901066  \\
+            9.814114996043
+        \end{array}\right),
+    \quad \widetilde{f}=\left(\begin{array}{c}
+            \tilde{f}_{1}     \\
+            \widetilde{f}_{2} \\
+            \widetilde{f}_{3}
+        \end{array}\right)=g\left(\begin{array}{c}
+            -\cos \vartheta \sin \gamma \\
+            \sin \vartheta              \\
+            \cos \vartheta \cos \gamma
+        \end{array}\right)
+$$
+Теперь можем вычислить углы крена и тангажа
+$$
+    \widetilde{\vartheta}=\operatorname{atan} 2\left(\widetilde{f}_{2}, \sqrt{\widetilde{f}_{1}^{2}+\widetilde{f}_{3}^{2}}\right)=0.012630947075, \quad \widetilde{\gamma}=-\operatorname{atan} 2\left(\widetilde{f}_{1}, \widetilde{f}_{3}\right)=0.003458086461
+$$
+Далее рассмотрим трёхгранник $М x$ определённый как:
+$$
+    M x^{0} \underset{3}{\stackrel{-\psi}{\longrightarrow}} M x \underset{1}{\stackrel{\vartheta}{\longrightarrow}} \underset{2}{\stackrel{\gamma}{\longrightarrow}} M s
+$$
+
+$$
+    \begin{aligned}
+         & A_{x s}=A_{x s}^{(1)}(-\vartheta) A_{x s}^{(2)}(-\gamma)=\left(\begin{array}{ccc}1 & 0 & 0 \\0 & \cos (-\vartheta) & \sin (-\vartheta) \\0 & -\sin (-\vartheta) & \cos (-\vartheta)\end{array}\right)\left(\begin{array}{ccc}\cos (-\gamma) & 0 & -\sin (-\gamma) \\0 & 1 & 0 \\\sin (-\gamma) & 0 & \cos (-\gamma)\end{array}\right)= \\
+         & =\left(\begin{array}{ccc}1 & 0 & 0 \\0 & \cos \vartheta & -\sin \vartheta \\0 & \sin \vartheta & \cos \vartheta\end{array}\right)\left(\begin{array}{ccc}\cos \gamma & 0 & \sin \gamma \\0 & 1 & 0 \\-\sin \gamma & 0 & \cos \gamma\end{array}\right)=\left(\begin{array}{ccc}\cos \gamma & 0 & \sin \gamma \\\sin \vartheta \sin \gamma & \cos \gamma & -\sin \vartheta \cos \gamma \\-\cos \vartheta \sin \gamma & \sin \vartheta & \cos \vartheta \cos \gamma\end{array}\right) \text {. }
+    \end{aligned}
+$$
+
+$$
+    \begin{aligned}
+         & A_{x s}=\left(\begin{array}{ccc}0.9999940208 & 0.0000000000 & 0.0034580796 
+            \\0.0000436777 & 0.9999940208 & -0.0126305357 \\
+            -0.0034578037 & 0.0126306112 & 0.9999142520
+        \end{array}\right)
+    \end{aligned}
+$$
+
 \end{document}
