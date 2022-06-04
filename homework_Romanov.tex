@@ -175,6 +175,175 @@ $$
 
 \textbf{Решение:}
 
+
+Из графиков на рисунках \eqref{fig:ax}-\eqref{fig:wz} видно,
+что нет выбросов в данных, поэтому все время наблюдения это интервал неподвижности.
+Первый акселерометр $Ax$ перевернут относительно стандартной ориентации
+Для того, чтобы получить измерения в стандартной ориентации перенумеруем оси
+\begin{equation}\label{aksel}
+    \left\{ {\begin{aligned}
+                 & A_1=-A_2 , \hfill \\
+                 & A_2=A_3, \hfill   \\
+                 & A_3=-A_1. \hfill  \\
+            \end{aligned}} \right.
+\end{equation}
+\begin{equation}\label{dus}
+    \left\{ {\begin{aligned}
+                 & W_1=-W_2, \hfill \\
+                 & W_2=W_3, \hfill  \\
+                 & W_3=-W_1. \hfill \\
+            \end{aligned}} \right.
+\end{equation}
+В географических осях вектор нормальной удельной силы тяжести:
+$$
+    g_{x^{0}}=\left(\begin{array}{r}
+            0 \\
+            0 \\
+            -g
+        \end{array}\right)
+$$
+Сила тяжести в $Ms$ равна
+$$
+    g_{s}=g\left(\begin{array}{c}
+            \cos \vartheta \sin \gamma \\
+            -\sin \vartheta            \\
+            -\cos \vartheta \cos \gamma
+        \end{array}\right)
+$$
+оценку показаний акселерометров найдем как среднее арифметическое всех показаний
+$$
+    \tilde{f}=\frac{\sum_{k=1}^{N} f^{\prime}(k)}{N}=
+    \left(\begin{array}{c}
+            -0.033938193479 \\
+            0.123968901066  \\
+            9.814114996043
+        \end{array}\right),
+    \quad \widetilde{f}=\left(\begin{array}{c}
+            \tilde{f}_{1}     \\
+            \widetilde{f}_{2} \\
+            \widetilde{f}_{3}
+        \end{array}\right)=g\left(\begin{array}{c}
+            -\cos \vartheta \sin \gamma \\
+            \sin \vartheta              \\
+            \cos \vartheta \cos \gamma
+        \end{array}\right)
+$$
+Теперь можем вычислить углы крена и тангажа
+$$
+    \widetilde{\vartheta}=\operatorname{atan} 2\left(\widetilde{f}_{2}, \sqrt{\widetilde{f}_{1}^{2}+\widetilde{f}_{3}^{2}}\right)=0.012630947075=0^{\circ} \ 43' \ 25.32''
+$$
+$$
+    \widetilde{\gamma}=-\operatorname{atan} 2\left(\widetilde{f}_{1}, \widetilde{f}_{3}\right)=0.003458086461=0^{\circ} \ 11' \ 53.28''
+$$
+Далее рассмотрим трёхгранник $Mx$ определённый как:
+$$
+    M x^{0} \underset{3}{\stackrel{-\psi}{\longrightarrow}} M x \underset{1}{\stackrel{\vartheta}{\longrightarrow}} \underset{2}{\stackrel{\gamma}{\longrightarrow}} M s
+$$
+
+$$
+    \begin{aligned}
+         & A_{x s}=A_{x s}^{(1)}(-\vartheta) A_{x s}^{(2)}(-\gamma)=\left(\begin{array}{ccc}1 & 0 & 0 \\0 & \cos (-\vartheta) & \sin (-\vartheta) \\0 & -\sin (-\vartheta) & \cos (-\vartheta)\end{array}\right)\left(\begin{array}{ccc}\cos (-\gamma) & 0 & -\sin (-\gamma) \\0 & 1 & 0 \\\sin (-\gamma) & 0 & \cos (-\gamma)\end{array}\right)= \\
+         & =\left(\begin{array}{ccc}1 & 0 & 0 \\0 & \cos \vartheta & -\sin \vartheta \\0 & \sin \vartheta & \cos \vartheta\end{array}\right)\left(\begin{array}{ccc}\cos \gamma & 0 & \sin \gamma \\0 & 1 & 0 \\-\sin \gamma & 0 & \cos \gamma\end{array}\right)=\left(\begin{array}{ccc}\cos \gamma & 0 & \sin \gamma \\\sin \vartheta \sin \gamma & \cos \gamma & -\sin \vartheta \cos \gamma \\-\cos \vartheta \sin \gamma & \sin \vartheta & \cos \vartheta \cos \gamma\end{array}\right) \text {. }
+    \end{aligned}
+$$
+
+$$
+    \begin{aligned}
+         & A_{x s}=\left(\begin{array}{ccc}0.9999940208 & 0.0000000000 & 0.0034580796
+             \\0.0000436777 & 0.9999940208 & -0.0126305357 \\
+             -0.0034578037     & 0.0126306112 & 0.9999142520
+            \end{array}\right)
+    \end{aligned}
+$$
+$$
+    \widetilde{\omega}=\frac{\sum_{k=1}^{N} \omega^{\prime}(k)}{N}, \quad \widetilde{\omega}_{x}=A_{x s}(\widetilde{\vartheta}, \widetilde{\gamma}) \widetilde{\omega}=A_{x s}(\widetilde{\vartheta}, \widetilde{\gamma})\left(\begin{array}{c}
+            \widetilde{\omega}_{1} \\
+            \widetilde{\omega}_{2} \\
+            \widetilde{\omega}_{3}
+        \end{array}\right)
+$$
+$$
+    \widetilde{\omega}_{x}=\left(\begin{array}{c}
+            0.0000394278 \\
+            0.0000109639 \\
+            0.0000603351
+        \end{array}\right)
+$$
+Угловая скорость Земли в географических осях:
+$$
+    u_{x^{0}}=w_{x^{0}}=\left(\begin{array}{c}
+            0              \\
+            u \cos \varphi \\
+            u \sin \varphi
+        \end{array}\right)
+$$
+$$
+    \begin{aligned}
+         & A_{x x_{0}}=\left(\begin{array}{ccc}\cos (-\psi) & \sin (-\psi) & 0 \\-\sin (-\psi) & \cos (-\psi) & 0 \\0 & 0 & 1\end{array}\right)=\left(\begin{array}{ccc}\cos \psi & -\sin \psi & 0 \\\sin \psi & \cos \psi & 0 \\0 & 0 & 1\end{array}\right) \\
+    \end{aligned}
+$$
+в осях $M x$ :
+$$
+    u_{x}=A_{x x_{0}}(\varphi, \psi) u_{x^{0}}=\left(\begin{array}{c}
+            -u \cos \varphi \sin \psi \\
+            u \cos \varphi \cos \psi  \\
+            u \sin \varphi
+        \end{array}\right)
+$$
+Приравняем угловую скорость земли и усреднённые показатели ДУС в трёхграннике $M x$, получим  $\widetilde{\varphi}$ и $\widetilde{\psi}:$
+
+$$
+    \tilde{\varphi}=\operatorname{atan} 2\left(\widetilde{\omega}_{3}, \sqrt{\widetilde{\omega}_{1}^{2}+\widetilde{\omega}_{2}^{2}}\right)=0.974800431338=55^{\circ}: 51^{\prime}: 7.022^{\prime \prime},
+$$
+$$
+    \widetilde{\psi}=-\operatorname{atan} 2\left(\widetilde{\omega}_{1}, \widetilde{\omega}_{2}\right)=-1.299573206866=-74^{\circ}: 27^{\prime}: 36.216^{\prime \prime}$$
+Теперь построим графики среднего значения и СКО с небольшим отступом от начального времени наблюдения по формулам. См. рисунки \eqref{fig:ma}-\eqref{fig:dw}:
+$$
+    \begin{gathered}
+        \widetilde{\mu}_{n+1}=\frac{n \widetilde{\mu}_{n}+x_{n+1}}{n+1}, \quad \widetilde{\mu}_{1}=x_{1}, \\
+        \widetilde{\sigma}_{n+1}^{2}=\left(1-\frac{1}{n}\right) \widetilde{\sigma}_{n}^{2}+\left(\frac{x_{n+1}-\widetilde{\mu}_{n+1}}{n}\right)^{2}, \quad \widetilde{\sigma}_{1}^{2}=0,
+    \end{gathered}
+$$
+
+Оценим значения северного $\left(\widetilde{\nu}_{N}\right)$ и вертикального дрейфа $\left(\widetilde{\nu}_{U P}\right)$ ДУС как:
+$$
+    \left(\begin{array}{c}
+            0                   \\
+            \widetilde{\nu}_{N} \\
+            \widetilde{\nu}_{U P}
+        \end{array}\right)=\omega_{x^{0}}-\widetilde{\omega}_{x^{0}}=\omega_{x^{0}}-A_{x^{0} s}(\widetilde{\psi}, \widetilde{\vartheta}, \widetilde{\gamma}) \widetilde{\omega}
+$$
+матрица ориентации географического трёхгранника относительно приборного:
+
+$$
+    A_{x^{0} s}=\left(\begin{array}{ccc}
+            \cos \psi \cos \gamma+\sin \psi \sin \vartheta \sin \gamma  & \sin \psi \cos \vartheta & \cos \psi \sin \gamma-\sin \psi \sin \vartheta \cos \gamma  \\
+            -\sin \psi \cos \gamma+\cos \psi \sin \vartheta \sin \gamma & \cos \psi \cos \vartheta & -\sin \psi \sin \gamma-\cos \psi \sin \vartheta \cos \gamma \\
+            -\cos \vartheta \sin \gamma                                 & \sin \vartheta           & \cos \vartheta \cos \gamma
+        \end{array}\right)
+$$
+
+Промежуточно вычислим:
+$$
+    \widetilde{\omega}_{x^{0}}=A_{x^{0} s}(\widetilde{\psi}, \widetilde{\vartheta}, \widetilde{\gamma}) \widetilde{\omega}_{s}=\left(\begin{array}{c}
+            0            \\
+            0.0000409236 \\
+            0.0000603351
+        \end{array}\right)=\left(\begin{array}{c}
+            0             \\
+            \tilde{u}_{N} \\
+            \widetilde{u}_{U P}
+        \end{array}\right)
+$$
+
+$$
+    \widetilde{\nu}_{N}=u \cos \widetilde{\varphi}-\widetilde{u}_{N}=0.000000009507=0^{\circ}: 0^{\prime}: 0.00196096^{\prime \prime}
+$$
+$$
+    \widetilde{\nu}_{U P}=u \sin \widetilde{\varphi}-\widetilde{u}_{U P}=0.000000013675=0^{\circ}: 0^{\prime}: 0.00282067^{\prime \prime}
+$$
+
+\section{Приложение 1}
 Графики исходных данных
 
 \begin{figure}[h!]
@@ -218,144 +387,6 @@ $$
     \caption{Показания $Wz(rad/s)$}
     \label{fig:wz}
 \end{figure}
-
-Из графиков на рисунках \eqref{fig:ax}-\eqref{fig:wz} видно,
-что нет выбросов в данных, поэтому все время наблюдения это интервал неподвижности.
-Первый акселерометр $Ax$ перевернут относительно стандартной ориентации
-Для того, чтобы получить измерения в стандартной ориентации перенумеруем оси
-\begin{equation}\label{aksel}
-    \left\{ {\begin{aligned}
-                 & A_1=-A_2 , \hfill \\
-                 & A_2=A_3, \hfill   \\
-                 & A_3=-A_1. \hfill  \\
-            \end{aligned}} \right.
-\end{equation}
-\begin{equation}\label{dus}
-    \left\{ {\begin{aligned}
-                 & W_1=-W_2, \hfill \\
-                 & W_2=W_3, \hfill  \\
-                 & W_3=-W_1. \hfill \\
-            \end{aligned}} \right.
-\end{equation}
-В географических осях вектор нормальной удельной силы тяжести:
-$$
-    g_{x^{0}}=\left(\begin{array}{r}
-            0 \\
-            0 \\
-            -g
-        \end{array}\right)
-$$
-Матрица перехода от географического трехгранника к приборному
-$$
-    A_{s x^{0}}=\left(\begin{array}{ccc}
-            \cos \psi \cos \gamma+\sin \psi \sin \vartheta \sin \gamma & -\sin \psi \cos \gamma+\cos \psi \sin \vartheta \sin \gamma & -\cos \vartheta \sin \gamma \\
-            \sin \psi \cos \vartheta                                   & \cos \psi \cos \vartheta                                    & \sin \vartheta              \\
-            \cos \psi \sin \gamma-\sin \psi \sin \vartheta \cos \gamma & -\sin \psi \sin \gamma-\cos \psi \sin \vartheta \cos \gamma & \cos \vartheta \cos \gamma
-        \end{array}\right)
-$$
-Сила тяжести в $Ms$ равна
-$$
-    g_{s}=g\left(\begin{array}{c}
-            \cos \vartheta \sin \gamma \\
-            -\sin \vartheta            \\
-            -\cos \vartheta \cos \gamma
-        \end{array}\right)
-$$
-оценку показаний акселерометров найдем как среднее арифметическое всех показаний
-$$
-    \tilde{f}=\frac{\sum_{k=1}^{N} f^{\prime}(k)}{N}=
-    \left(\begin{array}{c}
-            -0.033938193479 \\
-            0.123968901066  \\
-            9.814114996043
-        \end{array}\right),
-    \quad \widetilde{f}=\left(\begin{array}{c}
-            \tilde{f}_{1}     \\
-            \widetilde{f}_{2} \\
-            \widetilde{f}_{3}
-        \end{array}\right)=g\left(\begin{array}{c}
-            -\cos \vartheta \sin \gamma \\
-            \sin \vartheta              \\
-            \cos \vartheta \cos \gamma
-        \end{array}\right)
-$$
-Теперь можем вычислить углы крена и тангажа
-$$
-    \widetilde{\vartheta}=\operatorname{atan} 2\left(\widetilde{f}_{2}, \sqrt{\widetilde{f}_{1}^{2}+\widetilde{f}_{3}^{2}}\right)=0.012630947075=0^{\circ} \ 43' \ 25.32''
-$$
-$$
-    \widetilde{\gamma}=-\operatorname{atan} 2\left(\widetilde{f}_{1}, \widetilde{f}_{3}\right)=0.003458086461=0^{\circ} \ 11' \ 53.28''
-$$
-Далее рассмотрим трёхгранник $М x$ определённый как:
-$$
-    M x^{0} \underset{3}{\stackrel{-\psi}{\longrightarrow}} M x \underset{1}{\stackrel{\vartheta}{\longrightarrow}} \underset{2}{\stackrel{\gamma}{\longrightarrow}} M s
-$$
-
-$$
-    \begin{aligned}
-         & A_{x s}=A_{x s}^{(1)}(-\vartheta) A_{x s}^{(2)}(-\gamma)=\left(\begin{array}{ccc}1 & 0 & 0 \\0 & \cos (-\vartheta) & \sin (-\vartheta) \\0 & -\sin (-\vartheta) & \cos (-\vartheta)\end{array}\right)\left(\begin{array}{ccc}\cos (-\gamma) & 0 & -\sin (-\gamma) \\0 & 1 & 0 \\\sin (-\gamma) & 0 & \cos (-\gamma)\end{array}\right)= \\
-         & =\left(\begin{array}{ccc}1 & 0 & 0 \\0 & \cos \vartheta & -\sin \vartheta \\0 & \sin \vartheta & \cos \vartheta\end{array}\right)\left(\begin{array}{ccc}\cos \gamma & 0 & \sin \gamma \\0 & 1 & 0 \\-\sin \gamma & 0 & \cos \gamma\end{array}\right)=\left(\begin{array}{ccc}\cos \gamma & 0 & \sin \gamma \\\sin \vartheta \sin \gamma & \cos \gamma & -\sin \vartheta \cos \gamma \\-\cos \vartheta \sin \gamma & \sin \vartheta & \cos \vartheta \cos \gamma\end{array}\right) \text {. }
-    \end{aligned}
-$$
-
-$$
-    \begin{aligned}
-         & A_{x s}=\left(\begin{array}{ccc}0.9999940208 & 0.0000000000 & 0.0034580796
-             \\0.0000436777 & 0.9999940208 & -0.0126305357 \\
-             -0.0034578037     & 0.0126306112 & 0.9999142520
-            \end{array}\right)
-    \end{aligned}
-$$
-$$
-    \widetilde{\omega}=\frac{\sum_{k=1}^{N} \omega^{\prime}(k)}{N}, \quad \widetilde{\omega}_{x}=A_{x s}(\widetilde{\vartheta}, \widetilde{\gamma}) \widetilde{\omega}=A_{x s}(\widetilde{\vartheta}, \widetilde{\gamma})\left(\begin{array}{c}
-            \widetilde{\omega}_{1} \\
-            \widetilde{\omega}_{2} \\
-            \widetilde{\omega}_{3}
-        \end{array}\right)
-$$
-$$
-    \widetilde{\omega}_{x}=\left(\begin{array}{c}
-            0.0000394278 \\
-            0.0000109639 \\
-            0.0000603351
-        \end{array}\right)
-$$
-Угловая скорость Земли в географических осях:
-$$
-    u_{x^{0}}=\left(\begin{array}{c}
-            0              \\
-            u \cos \varphi \\
-            u \sin \varphi
-        \end{array}\right)
-$$
-$$
-    \begin{aligned}
-         & A_{x x_{0}}=\left(\begin{array}{ccc}\cos (-\psi) & \sin (-\psi) & 0 \\-\sin (-\psi) & \cos (-\psi) & 0 \\0 & 0 & 1\end{array}\right)=\left(\begin{array}{ccc}\cos \psi & -\sin \psi & 0 \\\sin \psi & \cos \psi & 0 \\0 & 0 & 1\end{array}\right) \\
-    \end{aligned}
-$$
-в осях $M x$ :
-$$
-    u_{x}=A_{x x_{0}}(\varphi, \psi) u_{x^{0}}=\left(\begin{array}{c}
-            -u \cos \varphi \sin \psi \\
-            u \cos \varphi \cos \psi  \\
-            u \sin \varphi
-        \end{array}\right)
-$$
-Приравняем угловую скорость земли и усреднённые показатели ДУС в трёхграннике $M x$, получим  $\widetilde{\varphi}$ и $\widetilde{\psi}:$
-
-$$
-    \tilde{\varphi}=\operatorname{atan} 2\left(\widetilde{\omega}_{3}, \sqrt{\widetilde{\omega}_{1}^{2}+\widetilde{\omega}_{2}^{2}}\right)=0.974800431338=55^{\circ}: 51^{\prime}: 7.022^{\prime \prime},
-$$
-$$
-    \widetilde{\psi}=-\operatorname{atan} 2\left(\widetilde{\omega}_{1}, \widetilde{\omega}_{2}\right)=-1.299573206866=-74^{\circ}: 27^{\prime}: 36.216^{\prime \prime}$$
-Теперь построим графики среднего значения и квадрата СКО с небольшим отступом от начального времени в соответствии с формулами :
-$$
-    \begin{gathered}
-        \widetilde{\mu}_{n+1}=\frac{n \widetilde{\mu}_{n}+x_{n+1}}{n+1}, \quad \widetilde{\mu}_{1}=x_{1}, \\
-        \widetilde{\sigma}_{n+1}^{2}=\left(1-\frac{1}{n}\right) \widetilde{\sigma}_{n}^{2}+\left(\frac{x_{n+1}-\widetilde{\mu}_{n+1}}{n}\right)^{2}, \quad \widetilde{\sigma}_{1}^{2}=0,
-    \end{gathered}
-$$
-
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.99\linewidth]{FullW.png}
@@ -370,43 +401,17 @@ $$
     \label{fig:mw}
 \end{figure}
 
-Как видно из Рис.8-11 качество входных измерений достаточно хорошее: присутствующие шумы ведут себя очень похоже на математический белый шум, за счёт этого средние значения показания акселерометров и ДУС быстро стабилизируются. Также можно сделать вывод, что для решения задачи выставки нам бы хватило и например одной пятой интервала измерений.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\linewidth]{sigmaAfull.png}
+    \caption{ График $\widetilde{\sigma_f}$}
+    \label{fig:da}
+\end{figure}
 
-Осталась оценить значения северного $\left(\widetilde{\nu}_{N}\right)$ и вертикального дрейфа $\left(\widetilde{\nu}_{U P}\right)$ ДУС как:
-$$
-    \left(\begin{array}{c}
-            0                   \\
-            \widetilde{\nu}_{N} \\
-            \widetilde{\nu}_{U P}
-        \end{array}\right)=\omega_{x^{0}}-\widetilde{\omega}_{x^{0}}=\omega_{x^{0}}-A_{x^{0} s}(\widetilde{\psi}, \widetilde{\vartheta}, \widetilde{\gamma}) \widetilde{\omega}
-$$
-где $\omega_{x^{0}}$ определяется из формулы $(11)$, а матрица ориентации географического трёхгранника относительно приборного:
-
-$$
-    A_{x^{0} s}=\left(\begin{array}{ccc}
-            \cos \psi \cos \gamma+\sin \psi \sin \vartheta \sin \gamma  & \sin \psi \cos \vartheta & \cos \psi \sin \gamma-\sin \psi \sin \vartheta \cos \gamma  \\
-            -\sin \psi \cos \gamma+\cos \psi \sin \vartheta \sin \gamma & \cos \psi \cos \vartheta & -\sin \psi \sin \gamma-\cos \psi \sin \vartheta \cos \gamma \\
-            -\cos \vartheta \sin \gamma                                 & \sin \vartheta           & \cos \vartheta \cos \gamma
-        \end{array}\right)
-$$
-
-Промежуточно вычислим:
-$$
-    \widetilde{\omega}_{x^{0}}=A_{x^{0} s}(\widetilde{\psi}, \widetilde{\vartheta}, \widetilde{\gamma}) \widetilde{\omega}_{s}=\left(\begin{array}{c}
-            0            \\
-            0.0000409236 \\
-            0.0000603351
-        \end{array}\right)=\left(\begin{array}{c}
-            0             \\
-            \tilde{u}_{N} \\
-            \widetilde{u}_{U P}
-        \end{array}\right)
-$$
-
-$$
-    \widetilde{\nu}_{N}=u \cos \widetilde{\varphi}-\widetilde{u}_{N}=0.000000009507=0^{\circ}: 0^{\prime}: 0.00196096^{\prime \prime}\left(\frac{1}{\text { чac }}\right)
-$$
-$$
-    \widetilde{\nu}_{U P}=u \sin \widetilde{\varphi}-\widetilde{u}_{U P}=0.000000013675=0^{\circ}: 0^{\prime}: 0.00282067^{\prime \prime}\left(\frac{1}{\text { час }}\right)
-$$.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\linewidth]{sigmaWfull.png}
+    \caption{ График $\widetilde{\sigma_w}$}
+    \label{fig:dw}
+\end{figure}
 \end{document}
