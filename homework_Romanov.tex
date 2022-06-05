@@ -178,8 +178,14 @@ $$
 
 Из графиков на рисунках \eqref{fig:ax}-\eqref{fig:wz} видно,
 что нет выбросов в данных, поэтому все время наблюдения это интервал неподвижности.
-Первый акселерометр $Ax$ перевернут относительно стандартной ориентации
+Первый акселерометр $Ax$ коллинеарен вертикальной оси, но перевернут относительно стандартной ориентации.
 Для того, чтобы получить измерения в стандартной ориентации перенумеруем оси
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\linewidth]{axes.jpeg}
+    \caption{Перенумерация осей}
+    \label{fig:wz}
+\end{figure}
 \begin{equation}\label{aksel}
     \left\{ {\begin{aligned}
                  & A_1=-A_2 , \hfill \\
@@ -239,13 +245,14 @@ $$
 $$
     M x^{0} \underset{3}{\stackrel{-\psi}{\longrightarrow}} M x \underset{1}{\stackrel{\vartheta}{\longrightarrow}} \underset{2}{\stackrel{\gamma}{\longrightarrow}} M s
 $$
-
+{\small
 $$
     \begin{aligned}
          & A_{x s}=A_{x s}^{(1)}(-\vartheta) A_{x s}^{(2)}(-\gamma)=\left(\begin{array}{ccc}1 & 0 & 0 \\0 & \cos (-\vartheta) & \sin (-\vartheta) \\0 & -\sin (-\vartheta) & \cos (-\vartheta)\end{array}\right)\left(\begin{array}{ccc}\cos (-\gamma) & 0 & -\sin (-\gamma) \\0 & 1 & 0 \\\sin (-\gamma) & 0 & \cos (-\gamma)\end{array}\right)= \\
          & =\left(\begin{array}{ccc}1 & 0 & 0 \\0 & \cos \vartheta & -\sin \vartheta \\0 & \sin \vartheta & \cos \vartheta\end{array}\right)\left(\begin{array}{ccc}\cos \gamma & 0 & \sin \gamma \\0 & 1 & 0 \\-\sin \gamma & 0 & \cos \gamma\end{array}\right)=\left(\begin{array}{ccc}\cos \gamma & 0 & \sin \gamma \\\sin \vartheta \sin \gamma & \cos \gamma & -\sin \vartheta \cos \gamma \\-\cos \vartheta \sin \gamma & \sin \vartheta & \cos \vartheta \cos \gamma\end{array}\right) \text {. }
     \end{aligned}
 $$
+}
 
 $$
     \begin{aligned}
@@ -323,7 +330,7 @@ $$
         \end{array}\right)
 $$
 
-Промежуточно вычислим:
+Вычислим:
 $$
     \widetilde{\omega}_{x^{0}}=A_{x^{0} s}(\widetilde{\psi}, \widetilde{\vartheta}, \widetilde{\gamma}) \widetilde{\omega}_{s}=\left(\begin{array}{c}
             0            \\
@@ -337,10 +344,10 @@ $$
 $$
 
 $$
-    \widetilde{\nu}_{N}=u \cos \widetilde{\varphi}-\widetilde{u}_{N}=0.000000009507=0^{\circ}: 0^{\prime}: 0.00196096^{\prime \prime}
+    \widetilde{\nu}_{N}=u \cos \widetilde{\varphi}-\widetilde{u}_{N}=0.000000009507
 $$
 $$
-    \widetilde{\nu}_{U P}=u \sin \widetilde{\varphi}-\widetilde{u}_{U P}=0.000000013675=0^{\circ}: 0^{\prime}: 0.00282067^{\prime \prime}
+    \widetilde{\nu}_{U P}=u \sin \widetilde{\varphi}-\widetilde{u}_{U P}=0.000000013675
 $$
 
 \section{Приложение 1}
